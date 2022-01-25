@@ -215,6 +215,7 @@ def ensure_user_environment(user_requirements_txt_file):
     )
 
     if user_requirements_txt_file:
+        logger.info("Installing packages using user_requirements_txt_file...")
         # FIXME: This currently fails hard, should fail soft and not abort installer
         conda.ensure_pip_requirements(
             USER_ENV_PREFIX,
